@@ -4,6 +4,7 @@ import download from "../../assets/download.png"
 import { MdArrowOutward } from "react-icons/md";
 import { CoinContext } from '../../context/CoinContext';
 import { useContext } from 'react';
+import {Link} from 'react-router-dom'
 
 
 function Navbar() {
@@ -34,9 +35,11 @@ function Navbar() {
 
   return (
     <div className='navbar flex flex-wrap p-5 justify-between items-center border-y cursor-pointer '>
+      <Link to={`/`}>
       <img src={download} alt="" className='h-8'/>
+      </Link>
       <ul className='flex justify-center items-center  gap-10 align-middle '>
-        <li>Home</li>
+        <Link to={`/`}><li>Home</li></Link>
         <li>Features</li>
         <li>Prising</li>
         <li>Blog</li>

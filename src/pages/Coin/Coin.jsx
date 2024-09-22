@@ -38,36 +38,36 @@ function Coin() {
   if (coinData , historicalData) {
     return (
       <div className="coin">
-        <div className="coin-name">
-          <img src={coinData.image.large}  />
+        <div className="coin-name flex justify-center items-center gap-4 mt-8 mb-9">
+          <img src={coinData.image.small} alt="image" />
           <p>
             <b>
               {coinData.name} ({coinData.symbol.toUpperCase()})
             </b>
           </p>
         </div>
-        <div className="coin-chart">
+        <div className="coin-chart w-1/2 m-auto h-80">
           <LineChart historicalData={historicalData}/>
         </div>
-        <div className="coin-info">
+        <div className="coin-info m-auto w-1/2 text-center mt-4 mb-6">
           <ul>
             <li>Crypto Market Rank</li>
             <li>{coinData.market_cap_rank}</li>
           </ul>
-          <ul>
+          {/* <ul>
             <li>Current Price</li>
             <li>{currency.symbol} {coinData.market_data.current_price}[currency.name].toLocaleString()</li>
-          </ul>
-          <ul>
+          </ul> */}
+          {/* <ul>
             <li>Market Cap</li>
             <li>{currency.symbol} {coinData.market_data.market_cap}[currency.name].toLocaleString()</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     );
   } else {
     return (
-      <div className="spinner">
+      <div className="spinner flex justify-center m-11">
         <div className="loader">
           <div className="bar1"></div>
           <div className="bar2"></div>

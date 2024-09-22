@@ -1,5 +1,5 @@
 import React from 'react'
-import './Navbar.css'
+// import './Navbar.css'
 import download from "../../assets/download.png"
 import { MdArrowOutward } from "react-icons/md";
 import { CoinContext } from '../../context/CoinContext';
@@ -39,18 +39,18 @@ function Navbar() {
       <img src={download} alt="" className='h-8'/>
       </Link>
       <ul className='flex justify-center items-center  gap-10 align-middle '>
-        <Link to={`/`}><li>Home</li></Link>
-        <li>Features</li>
-        <li>Prising</li>
-        <li>Blog</li>
+        <Link to={`/`}><li className='hover:text-blue-400 '>Home</li></Link>
+        <li className='hover:text-blue-400 '>Features</li>
+        <li className='hover:text-blue-400 '>Pricing</li>
+        <li className='hover:text-blue-400 '>Blog</li>
       </ul>
       <div className='nav-right flex justify-center gap-4'>
-        <select onChange={currencyHandler} className='p-1 bg-transparent '>
-            <option className='text-black'  value="usd">Usd</option>
+        <select onChange={currencyHandler} className='p-1 bg-transparent hover:text-blue-400 '>
+            <option className='text-black '  value="usd">Usd</option>
             <option className='text-black' value="eur">Eur</option>
             <option className='text-black' value="inr">Inr</option>
         </select>
-        <button className='flex justify-center border rounded-xl border-white-100 bg-white p-1.5 px-2 text-black'>Sign Up <MdArrowOutward /></button>
+        <button className='flex justify-center items-center border rounded-xl border-white-100 bg-white p-1.5 px-2 text-black hover:bg-transparent hover:text-white'>Sign Up <MdArrowOutward /></button>
       </div>
     </div>
   )

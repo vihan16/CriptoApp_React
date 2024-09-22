@@ -10,7 +10,7 @@ function Home() {
 
   const inputHandler = (e)=>{
     setInput(e.target.value)
-    if(event.target.value == ''){
+    if(e.target.value == ''){
       setDisplayCoin(allCoin)
     }
   }
@@ -40,10 +40,10 @@ function Home() {
           </datalist>
 
           <button className='border border-slate-600
-          px-3 py-1.5  rounded-xl text-slate-600' type='submit'>Search</button>
+          px-3 py-1.5  rounded-xl text-slate-600 hover:bg-slate-600 hover:text-black' type='submit'>Search</button>
         </form>
       </div>
-      <div className="crypto-table flex-col justify-center bg-slate-700/40 mx-7 p-2 rounded-2xl text-center mt-20 mb-10">
+      <div className="crypto-table flex-col justify-center bg-slate-700/40 mx-7 p-2 rounded-2xl text-center mt-20 mb-10 w-3/4 mr-auto ml-auto">
         <div className="table-layout py-4 mb-4 bg-slate-900/45 rounded-xl flex justify-evenly border-b">
             <p className='flex justify-start'>#</p>
             <p>Coins</p>
@@ -52,9 +52,9 @@ function Home() {
             <p className='market-cap'>Market Cap</p>
         </div>
         {displayCoin.slice(0,10).map((item,index)=>(
-          <Link to={`/coin/${item.id}`} className='table-layout flex justify-evenly border-b items-center p-2' key={index}>
-            <p className='flex self-start'>{item.market_cap_rank}</p>
-            <div className='flex-col items-center  justify-center content-center'>
+          <Link to={`/coin/${item.id}`} className='table-layout flex justify-evenly border-b items-center p-2 hover:bg-slate-800/85 ' key={index}>
+            <p className='flex self-start '>{item.market_cap_rank}</p>
+            <div className='flex-col items-center  justify-center '>
               <img className='h-10' src={item.image} alt="" />
               <p>{item.name + "-" + item.symbol}</p>
             </div>
